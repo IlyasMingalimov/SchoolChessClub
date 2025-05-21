@@ -1,2 +1,20 @@
 <h1>Hello {{title}}</h1>
-<chess-board>
+
+<chess-board></chess-board>
+
+<evaluator [min]="0"
+           [max]="200"
+           [step]="5"
+           [(value)]="selectedValue"></evaluator>
+
+<p>Выбранное значение: {{selectedValue}}</p>
+
+<button (click)="submitData()"
+        [disabled]="isSubmitting"
+        class="submit-button">
+  {{ isSubmitting ? 'Отправка...' : 'Отправить' }}
+</button>
+
+<div *ngIf="submitMessage" class="message">
+  {{ submitMessage }}
+</div>

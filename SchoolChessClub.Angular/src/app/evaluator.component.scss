@@ -1,0 +1,32 @@
+.range-input-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.slider {
+  flex-grow: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #ddd;
+  outline: none;
+}
+
+.number-input {
+  width: 70px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.min-max-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: #666;
+  font-size: 14px;
+}
