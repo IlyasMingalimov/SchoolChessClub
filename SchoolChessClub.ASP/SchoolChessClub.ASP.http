@@ -1,0 +1,6 @@
+@SchoolChessClub.ASP_HostAddress = http://localhost:5110
+
+GET {{SchoolChessClub.ASP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
