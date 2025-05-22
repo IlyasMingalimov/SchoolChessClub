@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../models/piece'
+import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../../models/piece'
 import { NgFor, CommonModule } from '@angular/common'
 
 @Component({

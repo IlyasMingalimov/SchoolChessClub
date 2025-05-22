@@ -1,14 +1,22 @@
 import { Component } from '@angular/core'
-import { ChessBoardComponent } from './chess-board.component'
-import { EvaluatorComponent } from './evaluator.component'
-import { NgIf, CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common'
+import { ChessBoardComponent } from '../app/shared/chess-board.component'
+import { EvaluatorComponent } from '../app/shared/evaluator.component'
+import { EvaluationOfPosition } from '../app/drills/evaluation-of-position.component'
+import { HeaderComponent } from './header/header.component'
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [ChessBoardComponent, EvaluatorComponent, NgIf, CommonModule]
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    ChessBoardComponent,
+    EvaluatorComponent,
+    EvaluationOfPosition]
 })
 export class AppComponent {
   title = 'SchoolChessClub';
@@ -28,7 +36,11 @@ export class AppComponent {
     this.isSubmitting = true
     this.submitMessage = ''
 
-    this.newValue = calculateAccuracy(this.selectedValue, this.desiredvalue, this.desiredvalue - this.desiredvalue, this.desiredvalue + this.desiredvalue)
+    this.newValue = calculateAccuracy
+      (this.selectedValue,
+        this.desiredvalue,
+        this.desiredvalue - this.desiredvalue,
+        this.desiredvalue + this.desiredvalue)
     this.submitMessage = this.newValue.toString()
 
     this.currentColor = this.getGradientColor(this.newValue)

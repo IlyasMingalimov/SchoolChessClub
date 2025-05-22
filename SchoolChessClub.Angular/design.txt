@@ -1,0 +1,114 @@
+Цветовая палитра:
+Основные цвета:
+
+Дымчато-голубой (основной): #8DA9C4 - мягкий, успокаивающий тон
+
+Дополнительный: #C4D7ED - светлый голубовато-дымчатый
+
+Акцентный: #5E7B9A - более насыщенный голубой
+
+Фон: #F5F8FA - очень светлый голубовато-белый
+
+Текст: #2D3748 - темно-серый с голубоватым подтоном
+
+Второстепенный текст: #4A5568 - средне-серый
+
+Акцентные цвета:
+
+Теплый акцент: #E2A478 (персиковый) - для кнопок и важных элементов
+
+Холодный акцент: #7FB3D5 (мягкий голубой)
+
+Ошибка: #E56B6F (мягкий красный)
+
+Шрифтовая пара:
+Основной шрифт (для текста):
+
+Inter (Google Fonts) - современный, читаемый гротеск
+
+css
+font-family: 'Inter', sans-serif;
+font-weight: 400; /* для основного текста */
+font-weight: 600; /* для подзаголовков */
+Акцентный шрифт (заголовки):
+
+Playfair Display (Google Fonts) - элегантный шрифт с засечками
+
+css
+font-family: 'Playfair Display', serif;
+font-weight: 500; /* для заголовков */
+font-style: italic; /* для акцентных заголовков */
+Пример применения:
+css
+:root {
+  /* Цвета */
+  --primary: #8DA9C4;
+  --primary-light: #C4D7ED;
+  --primary-dark: #5E7B9A;
+  --background: #F5F8FA;
+  --text: #2D3748;
+  --text-secondary: #4A5568;
+  --accent-warm: #E2A478;
+  --accent-cool: #7FB3D5;
+  --error: #E56B6F;
+  
+  /* Шрифты */
+  --font-main: 'Inter', sans-serif;
+  --font-accent: 'Playfair Display', serif;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text);
+  background-color: var(--background);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-accent);
+  color: var(--primary-dark);
+}
+
+a {
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+.button {
+  background-color: var(--accent-warm);
+  color: white;
+  font-family: var(--font-main);
+  font-weight: 500;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--primary-light);
+  box-shadow: 0 2px 8px rgba(141, 169, 196, 0.1);
+}
+Советы по использованию:
+Используйте дымчато-голубой (#8DA9C4) для фона хедера и футера
+
+Применяйте персиковый акцент (#E2A478) для кнопок CTA (призывов к действию)
+
+Для форм используйте белый фон с тонкой голубой границей (#C4D7ED)
+
+Сочетайте обычный и курсивный Playfair Display для создания визуальной иерархии
+
+Используйте полупрозрачные версии основных цветов для hover-эффектов
+
+Это сочетание создает профессиональный, но дружелюбный дизайн с хорошей читаемостью и элегантными акцентами.
+
+<h1 style="color: #8DA9C4; font-family: 'Inter', sans-serif; font-weight: 400;">Дымчато-голубой(основной)</h1>
+<h2 style="color: #C4D7ED; font-family: 'Inter', sans-serif; font-weight: 600; ">светлый голубовато-дымчатый(Дополнительный)</h2>
+<h2 style="color: #5E7B9A; font-family: 'Inter', sans-serif; font-weight: 600; ">более насыщенный голубой(Акцентный)</h2>
+<h2 style="color: #F5F8FA; font-family: 'Inter', sans-serif; font-weight: 600; ">очень светлый голубовато-белый(Фон)</h2>
+<h2 style="color: #2D3748; font-family: 'Inter', sans-serif; font-weight: 600; ">темно-серый с голубоватым подтоном(Текст)</h2>
+<h2 style="color: #4A5568; font-family: 'Inter', sans-serif; font-weight: 600; ">средне-серый(Второстепенный текст)</h2>
+
+<h3 style="color: #E2A478; font-family: 'Playfair Display', serif; font-weight: 500; font-style: italic; ">(персиковый) - для кнопок и важных элементов</h3>
+<h3 style="color: #7FB3D5; font-family: 'Playfair Display', serif; font-weight: 500; font-style: italic; ">(мягкий голубой) - ссылки</h3>
+<h3 style="color: #E56B6F; font-family: 'Playfair Display', serif; font-weight: 500; font-style: italic; ">(мягкий красный) - ошибки</h3>
