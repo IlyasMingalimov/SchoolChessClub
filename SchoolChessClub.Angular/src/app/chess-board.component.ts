@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../models/piece';
-import { NgFor, CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core'
+import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../models/piece'
+import { NgFor, CommonModule } from '@angular/common'
 
 @Component({
   selector: 'chess-board',
@@ -10,16 +10,16 @@ import { NgFor, CommonModule } from '@angular/common';
   standalone: true
 })
 export class ChessBoardComponent implements OnInit {
-  squares: ChessSquare[] = [];
-  pieces: ChessPiece[] = [];
+  squares: ChessSquare[] = []
+  pieces: ChessPiece[] = []
 
   ngOnInit(): void {
-    this.initializeBoard();
-    this.initializePieces();
+    this.initializeBoard()
+    this.initializePieces()
   }
 
   private initializeBoard(): void {
-    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
     this.squares = [];
 
     for (let row = 8; row >= 1; row--) {

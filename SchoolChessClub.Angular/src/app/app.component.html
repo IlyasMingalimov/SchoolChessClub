@@ -2,12 +2,10 @@
 
 <chess-board></chess-board>
 
-<evaluator [min]="0"
-           [max]="200"
-           [step]="5"
+<evaluator [min]=minValue
+           [max]=maxValue
+           [step]=step
            [(value)]="selectedValue"></evaluator>
-
-<p>Выбранное значение: {{selectedValue}}</p>
 
 <button (click)="submitData()"
         [disabled]="isSubmitting"
@@ -15,6 +13,12 @@
   {{ isSubmitting ? 'Отправка...' : 'Отправить' }}
 </button>
 
-<div *ngIf="submitMessage" class="message">
-  {{ submitMessage }}
+<button (click)="update()"
+        [disabled]="isUpdating"
+        class="submit-button">
+  {{isUpdating ? 'Обновление ...' : 'Обновить'}}
+</button>
+
+<div *ngIf="submitMessage" class="message" [style.--hue]=getGradientColor(newValue)>
+  <h2 [style.color]="currentColor">percentile {{ submitMessage }} правильное значение {{ desiredvalue }}</h2>
 </div>

@@ -25,6 +25,8 @@ h1{font-family: 'Cambria Math'}
   margin-top: 10px;
   padding: 10px;
   border-radius: 4px;
+  --hue: 60;
+  color: hsl(var(--hue), 100%, 50%)
 }
 
 .message.success {
