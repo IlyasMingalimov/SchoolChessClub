@@ -1,0 +1,33 @@
+/*Colors*/
+
+$primary-color: #8DA9C4; //Smoky blue
+$secondary-color: #C4D7ED; // light blue-smoky
+$accent-color: #5E7B9A; // more saturated blue
+$background-color: #F5F8FA; // very light blue-white
+
+$text-color: #2D3748; // dark gray with a blueish undertone
+$secondary-text-color: #4A5568; // medium gray
+
+/*Accent colors:*/
+
+//Warm accent for buttons and important elements
+$buttons-color: #E2A478; // peach
+
+//Cool accent for links
+$link-color: #7FB3D5; //soft blue
+
+//For Errors
+$error-color: #E56B6F; //soft red
+
+/*Fonts*/
+
+$font-primary: 'Inter', sans-serif;
+$font-accent: 'Playfair Display', serif;
+
+// Primary font settings (Inter)
+$font-weight-normal: 400; // for main text
+$font-weight-semibold: 600; // for subheadings
+
+// Accent font settings (Playfair Display)
+$font-weight-heading: 500; // for headings
+$font-style-accent: italic; // for accent headings
