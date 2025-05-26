@@ -40,15 +40,19 @@ h2, h3{
 }
 
 a {
-  color: $text-color;
+  color: $link-color;
+  font-family: $font-accent;
+  font-weight: $font-weight-normal;
+  font-style: $font-style-accent;
+  transition: $color-transition;
 
-&:hover {
-  color: darken($text-color, $color-hover-value)
+  &:hover {
+    color: darken($link-color, $color-hover-value)
   }
 
 
   &:active {
-    color: darken($text-color, $color-action-value)
+    color: darken($link-color, $color-action-value)
   }
 }
 
@@ -61,11 +65,13 @@ button {
   color: $text-color;
   //font-size: 15px;
   font-weight: $font-weight-normal;
-  border: none;
+  font-size: 1.1rem;
+  border: 0.13rem solid darken($buttons-color, 25%);
   border-radius: $shape-border-radius;
   padding: $shape-padding;
   font-family: $font-primary;
   cursor: pointer;
+  display: inline-block;
   transition: $color-transition;
 
   &:hover {
@@ -74,5 +80,17 @@ button {
 
   &:active {
     background-color: darken($buttons-color, $color-action-value)
+  }
+}
+
+img {
+  transition: $color-transition;
+
+  &:hover {
+    filter: invert($color-hover-value);
+  }
+
+  &:active {
+    filter: invert($color-action-value);
   }
 }

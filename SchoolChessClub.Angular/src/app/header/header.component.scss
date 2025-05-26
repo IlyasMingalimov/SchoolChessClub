@@ -18,11 +18,6 @@
 
   &__logo img {
     height: 80px;
-    transition: $color-transition;
-
-    &:hover {
-      opacity: 0.7;
-    }
   }
 
   &__nav ul {
@@ -38,8 +33,6 @@
         color: $text-color;
         font-family: $font-primary;
         font-weight: $font-weight-semibold;
-        font-style: $font-style-accent;
-        transition: $color-transition;
 
         &:hover {
           color: darken($text-color, $color-hover-value);
@@ -52,21 +45,9 @@
     }
   }
 
-  /*&__action .btn {
-    padding: 0.5rem 1.5rem;
-    background-color: $buttons-color;
-    font-family: $font-primary;
-    font-weight: $font-weight-normal;
-    font-style: $font-style-accent;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #D18E5A;
-    }
-  }*/
+  &__actions .btn{
+      font-weight: $font-weight-semibold;
+  }
 }
 
 
