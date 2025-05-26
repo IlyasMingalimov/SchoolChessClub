@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core'
 })
 
 export class EvaluationOfPosition {
-  @Input() Input: EvaluationOfPositionInput | undefined 
+  //@Input() Input: EvaluationOfPositionInput | undefined 
 }
 
 export interface EvaluationOfPositionInput

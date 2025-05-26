@@ -1,13 +1,16 @@
 @import '../../_variables.scss';
 
 .header {
+  //position: fixed;
   background-color: $primary-color;
   box-shadow: $shape-shadow;
   padding: $shape-padding;
   border-end-end-radius: $shape-border-radius;
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 1000;
+  border-end-start-radius: $shape-border-radius;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
 
   .container {
     display: flex;
@@ -46,8 +49,8 @@
     }
   }
 
-  &__actions .btn{
-      font-weight: $font-weight-semibold;
+  &__actions .btn {
+    font-weight: $font-weight-semibold;
   }
 }
 

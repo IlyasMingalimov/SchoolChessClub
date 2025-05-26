@@ -1,17 +1,17 @@
 @import '_variables';
 
 * {
-  
+  box-sizing: border-box;
 }
 
-html{
-
-}
-
-body {
+html {
   background-color: $background-color;
   font-family: $font-primary;
   font-weight: $font-weight-normal;
+}
+
+body {
+
 }
 
 header {
