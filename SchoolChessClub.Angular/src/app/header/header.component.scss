@@ -4,6 +4,7 @@
   background-color: $primary-color;
   box-shadow: $shape-shadow;
   padding: $shape-padding;
+  border-end-end-radius: $shape-border-radius;
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 1000;

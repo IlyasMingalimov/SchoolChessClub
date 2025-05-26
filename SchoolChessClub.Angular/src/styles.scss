@@ -63,7 +63,6 @@ p{
 button {
   background-color: $buttons-color;
   color: $text-color;
-  //font-size: 15px;
   font-weight: $font-weight-normal;
   font-size: 1.1rem;
   border: 0.13rem solid darken($buttons-color, 25%);
@@ -73,6 +72,7 @@ button {
   cursor: pointer;
   display: inline-block;
   transition: $color-transition;
+  box-shadow: $shape-shadow;
 
   &:hover {
     background-color: darken($buttons-color, $color-hover-value)
