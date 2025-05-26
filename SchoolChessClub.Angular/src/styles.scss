@@ -39,14 +39,40 @@ h2, h3{
     color: $secondary-text-color;
 }
 
-a{
-    color: $link-color;
+a {
+  color: $text-color;
+
+&:hover {
+  color: darken($text-color, $color-hover-value)
+  }
+
+
+  &:active {
+    color: darken($text-color, $color-action-value)
+  }
 }
 
 p{
 
 }
 
-button{
-    
+button {
+  background-color: $buttons-color;
+  color: $text-color;
+  //font-size: 15px;
+  font-weight: $font-weight-normal;
+  border: none;
+  border-radius: $shape-border-radius;
+  padding: $shape-padding;
+  font-family: $font-primary;
+  cursor: pointer;
+  transition: $color-transition;
+
+  &:hover {
+    background-color: darken($buttons-color, $color-hover-value)
+  }
+
+  &:active {
+    background-color: darken($buttons-color, $color-action-value)
+  }
 }

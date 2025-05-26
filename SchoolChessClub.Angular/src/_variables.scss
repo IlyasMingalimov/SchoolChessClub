@@ -19,6 +19,10 @@ $link-color: #7FB3D5; //soft blue
 //For Errors
 $error-color: #E56B6F; //soft red
 
+$color-transition: background-color 0.3s ease;
+$color-hover-value: 20%;
+$color-action-value: 40%;
+
 /*Fonts*/
 
 $font-primary: 'Inter', sans-serif;
@@ -31,3 +35,9 @@ $font-weight-semibold: 600; // for subheadings
 // Accent font settings (Playfair Display)
 $font-weight-heading: 500; // for headings
 $font-style-accent: italic; // for accent headings
+
+/*Shapes*/
+
+$shape-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+$shape-padding: 0.2rem 0.5rem;
+$shape-border-radius: 0.3rem;

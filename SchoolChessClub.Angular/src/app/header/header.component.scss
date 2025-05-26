@@ -1,26 +1,24 @@
-/*
+@import '../../_variables.scss';
+
 .header {
-  background-color: #8DA9C4;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  background-color: $primary-color;
+  box-shadow: $shape-shadow;
+  padding: $shape-padding;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
   z-index: 1000;
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2rem;
   }
 
   &__logo img {
-    height: 40px;
-    transition: background-color 0.3s ease;
+    height: 80px;
+    transition: $color-transition;
 
     &:hover {
       opacity: 0.7;
@@ -34,36 +32,32 @@
     padding: 0;
 
     li {
-      margin-left: 2rem;
+      margin-left: 5rem;
 
       a {
-        color: #2D3748;
-        font-family: 'Playfair Display', serif;
-        font-weight: 500;
-        font-style: italic;
-        text-decoration: none;
-        transition: color 0.3s;
-        transition: background-color 0.3s ease;
-
+        color: $text-color;
+        font-family: $font-primary;
+        font-weight: $font-weight-semibold;
+        font-style: $font-style-accent;
+        transition: $color-transition;
 
         &:hover {
-          opacity: 0.7;
+          color: darken($text-color, $color-hover-value);
         }
 
         &.active {
-          color: #007bff;
-          border-bottom: 2px solid #007bff;
+          color: darken($text-color, $color-action-value);
         }
       }
     }
   }
 
-  &__actions .btn {
+  /*&__action .btn {
     padding: 0.5rem 1.5rem;
-    background-color: #E2A478;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    font-style: italic;
+    background-color: $buttons-color;
+    font-family: $font-primary;
+    font-weight: $font-weight-normal;
+    font-style: $font-style-accent;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -72,10 +66,12 @@
     &:hover {
       background-color: #D18E5A;
     }
-  }
+  }*/
 }
 
-// Мобильное меню (опционально)
+
+
+// For Mobile
 @media (max-width: 768px) {
   .header {
     &__nav {
@@ -84,12 +80,10 @@
       &.open {
         display: block;
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        inset: 100% 0 auto 0;
         background: #fff;
         padding: 1rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: $shape-shadow;
 
         ul {
           flex-direction: column;
@@ -102,4 +96,3 @@
     }
   }
 }
-    */
