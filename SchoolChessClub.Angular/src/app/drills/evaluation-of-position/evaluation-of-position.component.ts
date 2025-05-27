@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
-import { ChessBoardComponent } from '../shared/chess-board.component'
-import { EvaluatorComponent } from '../shared/evaluator.component'
+import { ChessBoardComponent } from '../../shared/chess-board/chess-board.component'
+import { EvaluatorComponent } from '../../shared/evaluator/evaluator.component'
 
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EvaluationOfPosition } from '../drills/evaluation-of-position.component'
+import { EvaluationOfPosition } from '../drills/evaluation-of-position/evaluation-of-position.component'
 
 @Component({
   selector: 'app-content',
