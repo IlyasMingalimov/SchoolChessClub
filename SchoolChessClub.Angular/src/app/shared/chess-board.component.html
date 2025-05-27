@@ -1,19 +1,21 @@
-<!--
-    <div class="chess-board">
-  <div class="row" *ngFor="let row of [8,7,6,5,4,3,2,1]">
+<div class="chess-board">
+  <div class="row"
+       *ngFor="let row of [8,7,6,5,4,3,2,1]">
     <div class="square"
          *ngFor="let col of ['a','b','c','d','e','f','g','h']"
          [class.white]="(row + col.charCodeAt(0)) % 2 === 0"
          [class.black]="(row + col.charCodeAt(0)) % 2 !== 0"
          [class.selected]="selectedPiece?.position === col + row"
          (click)="onSquareClick(col + row)">
-      <div class="piece" *ngIf="getPieceAt(col + row) as piece" [class.white]="piece.color === 'white'" [class.black]="piece.color === 'black'">
-        {{ getPieceSymbol(piece) }}
+      <div class="piece">
+           <!--*ngIf="getPieceAt(col + row) as piece"
+           [class.white]="piece.color === 'white'"
+           [class.black]="piece.color === 'black'">
+        {{ getPieceSymbol(piece) }}-->
+        >
       </div>
       <div class="square-label">{{ col }}{{ row }}</div>
     </div>
   </div>
 </div>
-  -->
 
-<p>chess-board</p>

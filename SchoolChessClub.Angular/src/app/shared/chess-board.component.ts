@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-//import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../../models/piece'
+import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../../models/piece'
 import { NgFor, CommonModule } from '@angular/common'
 
 @Component({
@@ -9,7 +9,11 @@ import { NgFor, CommonModule } from '@angular/common'
   imports: [NgFor, CommonModule],
   standalone: true
 })
-export class ChessBoardComponent {/*implements OnInit {
+export class ChessBoardComponent {
+  getPieceSymbol(piece: ChessPiece): string { return `1` }
+  selectedPiece: ChessPiece | null = null;
+  onSquareClick(squareId: string): void { }
+  /*implements OnInit {
   squares: ChessSquare[] = []
   pieces: ChessPiece[] = []
 
@@ -76,6 +80,7 @@ export class ChessBoardComponent {/*implements OnInit {
     return square ? square.piece : null;
   }
 
+  getPieceSymbol(piece: ChessPiece): string
   getPieceSymbol(piece: ChessPiece): string {
     const symbols = {
       [PieceColor.White]: {
