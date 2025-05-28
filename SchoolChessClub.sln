@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolChessClub.ASP", "SchoolChessClub.ASP\SchoolChessClub.ASP.csproj", "{EDD9A81C-C1AF-4765-BD2D-09FAC34E0840}"
-EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "SchoolChessClub.Angular", "SchoolChessClub.Angular\SchoolChessClub.Angular.esproj", "{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolChessClub.WebApi", "SchoolChessClub.WebApi\SchoolChessClub.WebApi.csproj", "{47320F8C-89A6-38B6-8197-3B80A6B79842}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EDD9A81C-C1AF-4765-BD2D-09FAC34E0840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDD9A81C-C1AF-4765-BD2D-09FAC34E0840}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDD9A81C-C1AF-4765-BD2D-09FAC34E0840}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDD9A81C-C1AF-4765-BD2D-09FAC34E0840}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F9E1053-F1B4-AF14-FCD6-E40BA97D79C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{47320F8C-89A6-38B6-8197-3B80A6B79842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47320F8C-89A6-38B6-8197-3B80A6B79842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47320F8C-89A6-38B6-8197-3B80A6B79842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47320F8C-89A6-38B6-8197-3B80A6B79842}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

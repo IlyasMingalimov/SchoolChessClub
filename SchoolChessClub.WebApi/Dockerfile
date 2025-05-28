@@ -12,19 +12,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["SchoolChessClub.ASP/SchoolChessClub.ASP.csproj", "SchoolChessClub.ASP/"]
-RUN dotnet restore "./SchoolChessClub.ASP/SchoolChessClub.ASP.csproj"
+COPY ["SchoolChessClub.ASP/SchoolChessClub.WebApi.csproj", "SchoolChessClub.WebApi/"]
+RUN dotnet restore "./SchoolChessClub.ASP/SchoolChessClub.WebApi.csproj"
 COPY . .
-WORKDIR "/src/SchoolChessClub.ASP"
-RUN dotnet build "./SchoolChessClub.ASP.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/SchoolChessClub.WebApi"
+RUN dotnet build "./SchoolChessClub.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./SchoolChessClub.ASP.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./SchoolChessClub.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SchoolChessClub.ASP.dll"]
+ENTRYPOINT ["dotnet", "SchoolChessClub.WebApi.dll"]
