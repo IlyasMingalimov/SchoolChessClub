@@ -15,7 +15,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}:${env.BUILD_NUMBER}", "./SchoolChessClub.WebApi")
+                    sh 'ls -laR'
+                    docker.build("webapischoolchessclub:17", "-f SchoolChessClub.WebApi/Dockerfile .")
                 }
             }
         }
