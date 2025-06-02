@@ -1,6 +1,10 @@
 ﻿pipeline {
     agent any
     
+    environment {
+        DOCKER_IMAGE = "webapischoolchessclub"
+    }
+    
     stages {
         stage('Checkout') {
             steps {
@@ -8,10 +12,10 @@
             }
         }
         
-        stage('Build and Test') {
+        stage('Build') {
             steps {
                 script {
-                    docker.build("webapischoolchessclub:latest")
+                    docker.build("${DOCKER_IMAGE}:${env.BUILD_NUMBER}", "./SchoolChessClub.WebApi")
                 }
             }
         }
@@ -19,24 +23,28 @@
         stage('Deploy') {
             steps {
                 script {
-                    sh 'docker stop webapischoolchessclub-container || true'
-                    sh 'docker rm webapischoolchessclub-container || true'
-                    
-                    sh '''
+                    sh "docker rm -f ${DOCKER_IMAGE}-container || true"
+                    sh """
                         docker run -d \
-                            --name webapischoolchessclub-container \
+                            --name ${DOCKER_IMAGE}-container \
                             -p 5001:80 \
                             --restart unless-stopped \
-                            webapischoolchessclub:latest
-                    '''
+                            ${DOCKER_IMAGE}:${env.BUILD_NUMBER}
+                    """
                 }
             }
         }
     }
     
     post {
+        success {
+            echo 'Deployment completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
         always {
-            cleanWs()  
+            cleanWs()
         }
     }
 }
