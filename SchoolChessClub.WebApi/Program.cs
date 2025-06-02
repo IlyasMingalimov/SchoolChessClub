@@ -1,3 +1,6 @@
+using SchoolChessClub.System.Interface;
+using SchoolChessClub.System.Support;
+
 namespace SchoolChessClub.WebApi;
 
 public class Program
@@ -9,6 +12,8 @@ public class Program
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddScoped<ITime, Time>();
 
         var app = builder.Build();
         app.MapControllers();

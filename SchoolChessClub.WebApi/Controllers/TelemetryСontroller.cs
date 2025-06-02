@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
+using SchoolChessClub.System.Interface;
 
 namespace SchoolChessClub.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TelemetryСontroller : ControllerBase
+    public class TelemetryСontroller(ITime time) : ControllerBase
     {
         [HttpGet("Ping")]
         [AllowAnonymous]
@@ -15,7 +15,7 @@ namespace SchoolChessClub.WebApi.Controllers
             return new ContentResult
             {
                 ContentType = "text/html",
-                Content = $"Current time UTC {DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)}"
+                Content = $"Current time UTC {time.GetIsoCurrentTime()}"
             };
         }
     }
