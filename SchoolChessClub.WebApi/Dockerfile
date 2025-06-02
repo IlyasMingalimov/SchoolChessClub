@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["SchoolChessClub.ASP/SchoolChessClub.WebApi.csproj", "SchoolChessClub.WebApi/"]
+COPY ["SchoolChessClub.WebApi/SchoolChessClub.WebApi.csproj", "SchoolChessClub.WebApi/"]
 RUN dotnet restore "./SchoolChessClub.WebApi/SchoolChessClub.WebApi.csproj"
 COPY . .
 WORKDIR "/src/SchoolChessClub.WebApi"
