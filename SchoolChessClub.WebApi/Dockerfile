@@ -13,7 +13,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["SchoolChessClub.ASP/SchoolChessClub.WebApi.csproj", "SchoolChessClub.WebApi/"]
-RUN dotnet restore "./SchoolChessClub.ASP/SchoolChessClub.WebApi.csproj"
+RUN dotnet restore "./SchoolChessClub.WebApi/SchoolChessClub.WebApi.csproj"
 COPY . .
 WORKDIR "/src/SchoolChessClub.WebApi"
 RUN dotnet build "./SchoolChessClub.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
