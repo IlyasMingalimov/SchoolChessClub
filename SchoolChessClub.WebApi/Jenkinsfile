@@ -1,0 +1,42 @@
+﻿pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm  
+            }
+        }
+        
+        stage('Build and Test') {
+            steps {
+                script {
+                    docker.build("webapischoolchessclub:latest")
+                }
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                script {
+                    sh 'docker stop webapischoolchessclub-container || true'
+                    sh 'docker rm webapischoolchessclub-container || true'
+                    
+                    sh '''
+                        docker run -d \
+                            --name webapischoolchessclub-container \
+                            -p 5001:80 \
+                            --restart unless-stopped \
+                            webapischoolchessclub:latest
+                    '''
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()  
+        }
+    }
+}
