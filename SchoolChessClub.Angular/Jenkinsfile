@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_IMAGE = "angularschoolchessclub"
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm  
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    dir('SchoolChessClub.Angular') { 
+                        sh 'npm install'             
+                    }
+                }
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                script {
+                    sh 'ls -laR'
+                    docker.build("${DOCKER_IMAGE}:${env.BUILD_NUMBER}", "-f SchoolChessClub.Angular/Dockerfile .")
+                }
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                script {
+                    sh "docker rm -f ${DOCKER_IMAGE}-container || true"
+                    sh """
+                        docker run -d \
+                            --name ${DOCKER_IMAGE}-container \
+                            -p 80:80 \
+                            --restart unless-stopped \
+                            ${DOCKER_IMAGE}:${env.BUILD_NUMBER}
+                    """
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Deployment completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+        always {
+            cleanWs()
+        }
+    }
+}
