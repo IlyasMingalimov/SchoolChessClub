@@ -6,12 +6,16 @@ COPY package.json package-lock.json ./
 
 RUN npm ci
 
-COPY angular.json .
-COPY tsconfig.json .
-COPY src/ ./src/
+COPY . .
 
 RUN npm run build -- --configuration=production
 
 FROM nginx:alpine
 
+RUN rm -rf /usr/share/nginx/html/*
+
+COPY --from=build /app/dist/SchoolChessClub.Angular /usr/share/nginx/html
+
 EXPOSE 5003
+
+CMD ["nginx", "-g", "daemon off;"]
