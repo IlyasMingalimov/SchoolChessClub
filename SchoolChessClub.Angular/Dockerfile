@@ -2,7 +2,7 @@ FROM node:18-alpine as build
 
 WORKDIR /app
 
-COPY package.json ./
+COPY SchoolChessClub.Angular/package.json SchoolChessClub.Angular/package-lock.json ./
 
 RUN npm ci
 
