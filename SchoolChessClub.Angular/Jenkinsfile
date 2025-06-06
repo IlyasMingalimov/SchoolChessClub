@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = "angularschoolchessclub"
-        DOCKER_FILE = "SchoolChessClub.Angular/Dockerfile"
+        DOCKER_FILE = "Dockerfile"
         APP_DIR = "SchoolChessClub.Angular"
     }
     
