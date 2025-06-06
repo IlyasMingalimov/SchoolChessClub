@@ -72,11 +72,9 @@ pipeline {
     post {
         success {
             echo '✅ Deployment completed successfully!'
-            slackSend(color: 'good', message: "Build ${env.BUILD_NUMBER} deployed successfully")
         }
         failure {
             echo '❌ Pipeline failed!'
-            slackSend(color: 'danger', message: "Build ${env.BUILD_NUMBER} failed")
         }
         always {
             cleanWs()
