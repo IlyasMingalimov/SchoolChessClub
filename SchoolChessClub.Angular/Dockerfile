@@ -14,7 +14,7 @@ FROM nginx:alpine
 
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=build /app/dist/SchoolChessClub.Angular /usr/share/nginx/html
+COPY --from=build /app/dist/school-chess-club.angular /usr/share/nginx/html
 
 EXPOSE 5003
 
