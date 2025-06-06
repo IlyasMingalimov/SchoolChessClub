@@ -57,7 +57,7 @@ pipeline {
                     sh """
                         docker run -d \
                             --name ${DOCKER_IMAGE}-container \
-                            -p 80:80 \
+                            -p 5003:5003 \
                             --restart unless-stopped \
                             ${DOCKER_IMAGE}:${env.BUILD_NUMBER}
                     """

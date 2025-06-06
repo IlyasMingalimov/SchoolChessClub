@@ -14,4 +14,4 @@ RUN npm run build -- --configuration=production
 
 FROM nginx:alpine
 
-EXPOSE 80
+EXPOSE 5003
