@@ -3,30 +3,50 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = "angularschoolchessclub"
+        DOCKER_FILE = "SchoolChessClub.Angular/Dockerfile"
+        APP_DIR = "SchoolChessClub.Angular"
     }
     
     stages {
         stage('Checkout') {
             steps {
-                checkout scm  
+                checkout scm
+            }
+        }
+        
+        stage('Verify Structure') {
+            steps {
+                script {
+                    dir(APP_DIR) {
+                        sh '''
+                            ls -la
+                            [ -f package.json ] || exit 1
+                            [ -f angular.json ] || exit 1
+                        '''
+                    }
+                }
             }
         }
         
         stage('Install Dependencies') {
             steps {
                 script {
-                    dir('SchoolChessClub.Angular') { 
-                        sh 'npm install'             
+                    dir(APP_DIR) {
+                        sh 'npm ci --no-audit --prefer-offline'
                     }
                 }
             }
         }
         
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'ls -laR'
-                    docker.build("${DOCKER_IMAGE}:${env.BUILD_NUMBER}", "-f SchoolChessClub.Angular/Dockerfile .")
+                    dir(APP_DIR) {
+                        docker.build(
+                            "${DOCKER_IMAGE}:${env.BUILD_NUMBER}",
+                            "-f ${DOCKER_FILE} .."
+                        )
+                    }
                 }
             }
         }
@@ -34,7 +54,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh "docker rm -f ${DOCKER_IMAGE}-container || true"
+                    sh "docker stop ${DOCKER_IMAGE}-container || true"
+                    sh "docker rm ${DOCKER_IMAGE}-container || true"
+                    
                     sh """
                         docker run -d \
                             --name ${DOCKER_IMAGE}-container \
@@ -49,10 +71,12 @@ pipeline {
     
     post {
         success {
-            echo 'Deployment completed successfully!'
+            echo '✅ Deployment completed successfully!'
+            slackSend(color: 'good', message: "Build ${env.BUILD_NUMBER} deployed successfully")
         }
         failure {
-            echo 'Pipeline failed!'
+            echo '❌ Pipeline failed!'
+            slackSend(color: 'danger', message: "Build ${env.BUILD_NUMBER} failed")
         }
         always {
             cleanWs()
