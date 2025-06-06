@@ -42,10 +42,7 @@ pipeline {
             steps {
                 script {
                     dir(APP_DIR) {
-                        docker.build(
-                            "${DOCKER_IMAGE}:${env.BUILD_NUMBER}",
-                            "-f ${DOCKER_FILE} .."
-                        )
+                        docker.build("${DOCKER_IMAGE}:${env.BUILD_NUMBER}", ".")
                     }
                 }
             }
