@@ -7,12 +7,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
   standalone: true
 })
 
-export class EvaluatorComponent{/*
+export class EvaluatorComponent{
   @Input() min: number = -10
   @Input() max: number = 10
   @Input() step: number = 0.1
   @Input() value: number = 0
-
+  
   @Output() valueChange = new EventEmitter<number>()
 
   onSliderChange(event: Event) {
@@ -27,5 +27,5 @@ export class EvaluatorComponent{/*
     const validatedValue = Math.min(Math.max(newValue, this.min), this.max)
     this.value = validatedValue
     this.valueChange.emit(validatedValue)
-  }*/
+  }
 }
