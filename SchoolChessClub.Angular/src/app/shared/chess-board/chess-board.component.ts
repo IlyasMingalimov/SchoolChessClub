@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core'
-import { ChessPiece, ChessSquare, PieceColor, PieceType } from '../../../models/piece'
+import { Component } from '@angular/core'
+import { ChessPiece } from '../../../models/piece'
 import { NgFor, CommonModule } from '@angular/common'
 
 @Component({
   selector: 'chess-board',
   templateUrl: './chess-board.component.html',
   styleUrls: ['./chess-board.component.scss'],
-  imports: [NgFor, CommonModule],
-  standalone: true
+  standalone: true,
+  imports: [
+    NgFor,
+    CommonModule]
 })
 export class ChessBoardComponent {
-  getPieceSymbol(piece: ChessPiece): string { return `1` }
   selectedPiece: ChessPiece | null = null;
+  getPieceSymbol(piece: ChessPiece): string { return `a` }
   onSquareClick(squareId: string): void { }
 }

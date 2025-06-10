@@ -3,9 +3,9 @@ import { EvaluationOfPosition } from '../drills/evaluation-of-position/evaluatio
 
 @Component({
   selector: 'app-content',
-  standalone: true,
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',
+  standalone: true,
   imports: [EvaluationOfPosition]
 })
 export class ContentComponent {

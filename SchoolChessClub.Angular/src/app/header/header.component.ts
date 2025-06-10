@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class HeaderComponent {
-  isMenuOpen = false;
 
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
 }

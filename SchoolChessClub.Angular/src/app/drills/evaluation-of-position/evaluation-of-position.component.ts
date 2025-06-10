@@ -8,14 +8,11 @@ import { EvaluatorComponent } from '../../shared/evaluator/evaluator.component'
   templateUrl: './evaluation-of-position.component.html',
   styleUrl: './evaluation-of-position.component.scss',
   standalone: true,
-  imports: [ChessBoardComponent, EvaluatorComponent]
+  imports: [
+    ChessBoardComponent,
+    EvaluatorComponent]
 })
 
 export class EvaluationOfPosition {
    
-}
-
-export interface EvaluationOfPositionInput
-{
-
 }
