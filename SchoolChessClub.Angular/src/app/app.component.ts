@@ -13,5 +13,5 @@ import { ContentComponent } from './content/content.component'
     ContentComponent]
 })
 export class AppComponent {
-  
+
 }
