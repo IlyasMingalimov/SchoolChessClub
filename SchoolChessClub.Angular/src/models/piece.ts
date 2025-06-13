@@ -13,13 +13,17 @@ export enum PieceColor {
 }
 
 export interface ChessPiece {
-  type: PieceType;
-  color: PieceColor;
-  position: string; // exem, 'a1', 'e4' и т.д.
+  type: PieceType
+  color: PieceColor
+  position: string // exem, 'a1', 'e4' и т.д.
 }
 
 export interface ChessSquare {
-  id: string; // exem, 'a1', 'h8'
-  color: 'white' | 'black';
-  piece: ChessPiece | null;
+  id: string // exem, 'a1', 'h8'
+  color: 'white' | 'black'
+  piece: ChessPiece | null
+}
+
+export interface ChessBoard {
+  pieces: ChessPiece[]
 }
