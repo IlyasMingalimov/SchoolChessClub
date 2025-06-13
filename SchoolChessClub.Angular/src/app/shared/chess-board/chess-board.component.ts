@@ -1,5 +1,5 @@
-import { Component } from '@angular/core'
-import { ChessPiece } from '../../../models/piece'
+import { Component, Input } from '@angular/core'
+import { ChessBoard, ChessPiece, PieceColor, PieceType } from '../../../models/piece'
 import { NgFor, CommonModule } from '@angular/common'
 
 @Component({
@@ -12,7 +12,37 @@ import { NgFor, CommonModule } from '@angular/common'
     CommonModule]
 })
 export class ChessBoardComponent {
-  selectedPiece: ChessPiece | null = null;
-  getPieceSymbol(piece: ChessPiece): string { return `a` }
-  onSquareClick(squareId: string): void { }
+  @Input() chessBoard: ChessBoard | undefined
+  onSquareClick(squareId: string): void
+  {
+    console.log(this.chessBoard)
+  }
+
+  getPieceAt(squareId: string): ChessPiece | null {
+    const piece = this.chessBoard?.pieces.find(sq => sq.position === squareId);
+    return piece ? piece : null
+  }
+
+  getPieceSymbol(piece: ChessPiece): string {
+    const symbols = {
+      [PieceColor.White]: {
+        [PieceType.King]: '♔',
+        [PieceType.Queen]: '♕',
+        [PieceType.Rook]: '♖',
+        [PieceType.Bishop]: '♗',
+        [PieceType.Knight]: '♘',
+        [PieceType.Pawn]: '♙'
+      },
+      [PieceColor.Black]: {
+        [PieceType.King]: '♚',
+        [PieceType.Queen]: '♛',
+        [PieceType.Rook]: '♜',
+        [PieceType.Bishop]: '♝',
+        [PieceType.Knight]: '♞',
+        [PieceType.Pawn]: '♟'
+      }
+    };
+
+    return symbols[piece.color][piece.type];
+  }
 }
