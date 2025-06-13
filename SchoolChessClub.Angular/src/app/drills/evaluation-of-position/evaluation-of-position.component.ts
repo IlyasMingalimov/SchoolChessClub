@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { ChessBoardComponent } from '../../shared/chess-board/chess-board.component'
 import { EvaluatorComponent } from '../../shared/evaluator/evaluator.component'
+import { WebapiService } from '../../../services/webapi.service'
 
 
 @Component({
@@ -10,9 +11,16 @@ import { EvaluatorComponent } from '../../shared/evaluator/evaluator.component'
   standalone: true,
   imports: [
     ChessBoardComponent,
-    EvaluatorComponent]
+    EvaluatorComponent],
+  providers: [
+    WebapiService]
 })
 
 export class EvaluationOfPosition {
-   
+  constructor(private webapi: WebapiService)
+  {
+      this.name = this.webapi.getRandomEvaluationDrill();
+  }
+
+  name: string = '2'
 }

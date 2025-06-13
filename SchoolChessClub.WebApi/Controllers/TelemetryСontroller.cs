@@ -6,7 +6,7 @@ namespace SchoolChessClub.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TelemetryСontroller(ITime time) : ControllerBase
+    public class TelemetryController(ITime time) : ControllerBase
     {
         [HttpGet("Ping")]
         [AllowAnonymous]

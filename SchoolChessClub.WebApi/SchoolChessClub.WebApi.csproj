@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SchoolChessClub.DTO\SchoolChessClub.DTO.csproj" />
     <ProjectReference Include="..\SchoolChessClub.System\SchoolChessClub.System.csproj" />
   </ItemGroup>
 
