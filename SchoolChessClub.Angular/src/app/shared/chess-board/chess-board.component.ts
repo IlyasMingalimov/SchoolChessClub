@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
-import { ChessBoard, ChessPiece, PieceColor, PieceType } from '../../../models/piece'
 import { NgFor, CommonModule } from '@angular/common'
+import { ChessBoard, ChessPiece, PieceColor, PieceType } from '../../../models/piece'
 
 @Component({
   selector: 'chess-board',
