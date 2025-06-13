@@ -9,9 +9,7 @@
       <div class="piece"
         *ngIf="getPieceAt(col + row) as piece"
            [class.white]="piece.color === 'white'"
-           [class.black]="piece.color === 'black'"
-        {{ getPieceSymbol(piece) }}>
-      </div>
+           [class.black]="piece.color === 'black'">{{ getPieceSymbol(piece) }}</div>
       <div class="square-label">{{ col }}{{ row }}</div>
     </div>
   </div>
