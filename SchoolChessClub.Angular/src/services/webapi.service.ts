@@ -171,7 +171,7 @@ let evaluationDrillDemo: evaluationDrill = {
       {
         type: PieceType.Pawn,
         color: PieceColor.Black,
-        position: "b2"
+        position: "b7"
       },
       {
         type: PieceType.Pawn,
